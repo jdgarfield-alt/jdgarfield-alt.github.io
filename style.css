@@ -503,12 +503,87 @@ span {
     color: var(--second-bg-color);
 }
 
+/* Meeting Section */
+.meeting {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.meeting-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.timezone-box {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.time-card {
+    background: var(--second-bg-color);
+    padding: 3rem 5rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: 0.5s ease;
+    min-width: 300px;
+}
+
+.time-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.1);
+}
+
+.time-card i {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.time-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.time-display {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin: 1rem 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.time-card p {
+    font-size: 1.4rem;
+    color: #94a3b8;
+}
+
+.meeting-info {
+    text-align: center;
+}
+
+.meeting-info p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
     }
 }
+
 
 @media (max-width: 991px) {
     .header {

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Meeting | Di Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Di<span class="accent">.</span></a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="meeting.html" class="active">Meeting</a>
+        </nav>
+
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <section class="meeting" id="meeting">
+        <h2 class="heading">Book a <span class="accent">Meeting</span></h2>
+
+        <div class="meeting-container">
+            <div class="timezone-box">
+                <div class="time-card user-time">
+                    <i class="fa-regular fa-clock"></i>
+                    <h3>Your Time</h3>
+                    <div id="user-time-display" class="time-display">--:--</div>
+                    <p id="user-timezone">Detecting...</p>
+                </div>
+
+                <div class="time-card my-time">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>My Time (Calgary)</h3>
+                    <div id="calgary-time-display" class="time-display">--:--</div>
+                    <p>Mountain Time (MT)</p>
+                </div>
+            </div>
+
+            <div class="meeting-info">
+                <p>Let's find a time that works for both of us. I'm based in Calgary, AB.</p>
+                <a href="#" class="btn">Schedule via Calendly</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by Di | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function updateTime() {
+            const now = new Date();
+
+            // User Time
+            const userOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById('user-time-display').textContent = now.toLocaleTimeString([], userOptions);
+            document.getElementById('user-timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.replace('_', ' ');
+
+            // Calgary Time (Mountain Time)
+            const calgaryOptions = { timeZone: 'America/Edmonton', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById('calgary-time-display').textContent = now.toLocaleTimeString([], calgaryOptions);
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>
